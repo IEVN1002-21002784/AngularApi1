@@ -4,7 +4,6 @@ import { AlumnosUtl } from '../alumnos';
 import { CommonModule, Location } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ProyectoapiService } from '../proyectoapi.service';
-
 @Component({
   selector: 'app-eliminar',
   standalone: true,
@@ -43,11 +42,11 @@ export default class EliminarComponent {
   }
  
   asignaCampos(dataSource:any){
-    this.regAlumno.matricula=dataSource.alumno.matricula
-    this.regAlumno.nombre=dataSource.alumno.nombre
-    this.regAlumno.apaterno=dataSource.alumno.apaterno
-    this.regAlumno.amaterno=dataSource.alumno.amaterno
-    this.regAlumno.correo=dataSource.alumno.correo
+    this.regAlumno.matricula=dataSource.alumnos.matricula
+    this.regAlumno.nombre=dataSource.alumnos.nombre
+    this.regAlumno.apaterno=dataSource.alumnos.apaterno
+    this.regAlumno.amaterno=dataSource.alumnos.amaterno
+    this.regAlumno.correo=dataSource.alumnos.correo
     console.log(dataSource.alumno.matricula)
  }
  
@@ -59,9 +58,8 @@ export default class EliminarComponent {
     error:(e)=> console.error(e),
     complete:()=>console.info()})
  
-    this.router.navigate(['/humani/listaalumnos'])
+    this.router.navigate(['/utl/listaalumnos'])
  
 }
  
 }
- 
